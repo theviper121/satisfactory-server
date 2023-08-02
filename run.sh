@@ -111,7 +111,7 @@ if ! [[ "${SKIPUPDATE,,}" == "true" ]]; then
 
     printf "Downloading the latest version of the game...\\n"
 
-    steamcmd +force_install_dir /config/gamefiles +login anonymous +app_update "$STEAMAPPID" -complete_install_via_http -beta "$STEAMBETAFLAG" validate +quit +ClientDownloadUseHTTPS "0" +ForceContentServerHTTPS "0"
+    steamcmd +force_install_dir /config/gamefiles -complete_install_via_http +login anonymous +app_update "$STEAMAPPID" -beta "$STEAMBETAFLAG" validate +quit +ClientDownloadUseHTTPS "0" +ForceContentServerHTTPS "0"
 else
     printf "Skipping update as flag is set\\n"
 fi
